@@ -31,7 +31,7 @@ public class AuthenticationFailureHandler {
                     message = "Произошла ошибка при аутентификации";
                 }
                 String encode = URLEncoder.encode(message, StandardCharsets.UTF_8);
-                response.sendRedirect("/login/error?message=" + encode);
+                response.sendRedirect("/login?message=" + encode);
             }
         };
     }

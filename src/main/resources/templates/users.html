@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
 
 
-
 </head>
 
 <body class="mt-3 container">
@@ -24,9 +23,8 @@
         <th>ID</th>
         <th>Username</th>
         <th>Email</th>
-        <th>Password</th>
         <th>Is Block Account</th>
-<!--        <th>Author Year</th>-->
+        <th>Is Restriction Password</th>
         <th>Action</th>
     </tr>
     <tr th:if="${#lists.isEmpty(usersDto)}">
@@ -40,12 +38,11 @@
         <td th:text="${userDto.id}">Id</td>
         <td th:text="${userDto.username}">Username</td>
         <td th:text="${userDto.email}" type="email">Email</td>
-        <td th:text="${userDto.password}" type="password">Password</td>
         <td th:text="${userDto.userSettings?.block ?: false}" type="checkbox">Is Block Account</td>
+        <td th:text="${userDto.userSettings?.restrictionPassword ?: false}" type="checkbox">Is Restriction Password</td>
         <td>
             <a href="edit.html" th:href="@{/user/edit/{id}(id=${userDto.id})}">Edit</a>
         </td>
-
     </tr>
     </tbody>
 

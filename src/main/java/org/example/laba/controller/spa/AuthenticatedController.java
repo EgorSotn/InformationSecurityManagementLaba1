@@ -28,7 +28,7 @@ public class AuthenticatedController {
     @GetMapping(value = "/login/error")
     public String getLoginPageError(@RequestParam("message") String error, Model model) {
         model.addAttribute("error", URLDecoder.decode(error, StandardCharsets.UTF_8));
-        return "login";
+        return "login.html";
     }
 //    @RequestMapping("/login-error.html")
 //    public String loginError(Model model) {
