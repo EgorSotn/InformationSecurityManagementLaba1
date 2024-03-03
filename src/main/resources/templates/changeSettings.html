@@ -1,0 +1,46 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>-->
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII"/>-->
+<!--    <style>-->
+<!--        .password-verdict{-->
+<!--        color:#000;-->
+<!--        }-->
+<!--    </style>-->
+<!--    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
+<!--    <title>update password</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div>-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <h1>reset</h1>-->
+<!--            <form th:action="@{/user/change-password}" th:object="${passwordDto}"  method="post" onsubmit="return validatePassword()">-->
+<!--                <br/>-->
+<!--                <label class="col-sm-2">Old Password</label>-->
+<!--                <span class="col-sm-5"><input class="form-control" id="currentPassword" name="oldPassword" type="password"-->
+<!--                                              th:field="*{currentPassword}"/></span>-->
+<!--                <div class="col-sm-12"></div>-->
+<!--                <br/><br/>-->
+<!--                <label class="col-sm-2">New Password</label>-->
+<!--                <span class="col-sm-5"><input class="form-control" id="newPassword" type="password" th:field="*{newPassword}"/></span>-->
+<!--                <div class="col-sm-12"></div>-->
+<!--                <br/><br/>-->
+<!--                <label class="col-sm-2">Confirm</label>-->
+<!--                <span class="col-sm-5"><input class="form-control" id="confirmPassword" type="password"-->
+<!--                                              th:field="*{confirmPassword}"/></span>-->
+<!--                <div th:if="${message}" class="col-sm-12 alert alert-danger" style="display:none" th:utext="${message}"></div>-->
+
+<!--                <div class="col-sm-12">-->
+<!--                    <br/><br/>-->
+<!--                    <button class="btn btn-primary" type="submit">submit</button>-->
+<!--                </div>-->
+<!--            </form>-->
+
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</body>-->
+
+<!--</html>-->

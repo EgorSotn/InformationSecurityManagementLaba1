@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Library
+    username: postgres
+    password: westa852
+
+  sql:
+    init:
+      schema-locations: classpath:scripts/schema_user.sql
+      data-locations: classpath:scripts/data.sql
+      mode: never
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: validate
+
+    properties:
+      hibernate:
+        format_sql: true
