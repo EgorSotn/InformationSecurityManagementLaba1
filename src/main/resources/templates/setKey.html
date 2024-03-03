@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII"/>
+    <title th:utext="#{label.pages.home.title}">home</title>
+</head>
+
+<body>
+    <div class="container">
+        <form th:action="@{/admin/set-key}" th:method="post">
+            <div class="form-group">
+                <label for="key">Encoding Key:</label>
+                <input type="text" id="key" name="key" class="form-control"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

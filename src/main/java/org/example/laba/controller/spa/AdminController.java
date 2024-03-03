@@ -6,6 +6,7 @@ import org.example.laba.dto.UserFullDto;
 import org.example.laba.dto.UserSettingsDto;
 import org.example.laba.service.AdminService;
 import org.example.laba.service.AppUserService;
+import org.example.laba.service.EncodingKeyService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -17,10 +18,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
+@RequestMapping("/admin")
 @RequiredArgsConstructor
 public class AdminController {
     private final AdminService adminService;
     private final AppUserService userService;
+    private final EncodingKeyService encodingKeyService;
 
     @GetMapping("/user")
     public String getAllUser(Model model) {
@@ -43,7 +46,7 @@ public class AdminController {
     @PostMapping("/user/edit/delete")
     public String deleteUser(@RequestParam("id") Long id) {
         adminService.deleteUser(id);
-        return "redirect:/user";
+        return "redirect:/admin/user";
     }
 
     @ResponseBody
@@ -53,5 +56,14 @@ public class AdminController {
         Map<String, String> response = new HashMap<>();
         response.put("redirectUrl", "/user/edit/" + userFullDto.getId());
         return ResponseEntity.ok(response);
+    }
+    @PostMapping("/set-key")
+    public String setKey(@RequestParam("key") String key) {
+        encodingKeyService.createKey(key);
+        return "redirect:/admin/user";
+    }
+    @GetMapping("/set-key")
+    public String setKeyView() {
+        return "SetKey.html";
     }
 }
